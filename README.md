@@ -248,6 +248,7 @@ Multi-agent systems using large language models in specialized roles (analyst, t
 - [FinRL](https://github.com/AI4Finance-Foundation/FinRL) - Financial reinforcement learning framework supporting A2C, DDPG, PPO, TD3, SAC agents; FinRL-X adds modular infrastructure for the LLM/agentic AI era.
 - [Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) - HKUDS's natural-language multi-agent research framework: agent-swarm presets (investment committee, quant desk, risk committee), backtest engines for A-shares, US equities, crypto, futures, FX, and options, multi-source data fallback, and an MCP server; MIT.
 - [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) - Educational proof of concept in which LLM investor agents produce trading decisions for configurable funds, with paper trading on a hash-chained ledger and backtesting; places no real trades and needs a Financial Datasets API key plus an LLM provider key; MIT.
+- [TraderHarness](https://github.com/HephaestLab/TraderHarness) - Backtesting harness for LLM trading agents built against training-data leakage: strict point-in-time data, date and entity masking so a model cannot recognize the period or company, deterministic replay, and export of runs as training trajectories; A-share data, Apache-2.0, early-stage.
 - [oracle3](https://github.com/YichengYang-Ethan/oracle3-prediction-market-agent) - Prediction-market research tools with MCP market access, fee-aware checks across related event contracts, a local paper ledger, and a separate Python engine for paper/live execution; Apache-2.0.
 
 ### Transformer Time-Series Foundation Models
@@ -264,6 +265,7 @@ Pre-trained transformer models for temporal data that can forecast time series z
 - [Time-MoE](https://github.com/Time-MoE/Time-MoE) - Decoder-only mixture-of-experts forecasting models scaled to 2.4B parameters, released with Time-300B, an open collection of 300B+ time points; ICLR 2025 Spotlight, [paper](https://arxiv.org/abs/2409.16040).
 - [MOMENT](https://github.com/moment-timeseries-foundation-model/moment) - CMU Auton Lab's open time-series foundation models for forecasting, classification, anomaly detection, and imputation from one backbone, with released pre-training code; ICML 2024, [paper](https://arxiv.org/abs/2402.03885).
 - [Sundial](https://github.com/thuml/Sundial) - Tsinghua THUML's generative foundation models trained on 10^12 time points with a TimeFlow loss (no discrete tokenization), producing sample paths for probabilistic zero-shot forecasts; ICML 2025 Oral, [paper](https://arxiv.org/abs/2502.00816).
+- [Timestral](https://github.com/mistralai/timestral) - Mistral AI's multivariate probabilistic forecasting models (5M-209M params) with past-only and known-future covariates, 21 quantiles per step, and context up to 32K steps; CPU-friendly inference. Released October 2026; leaderboard rankings are vendor-reported. Code Apache-2.0, weights under a modified MIT license.
 
 ### AI-Driven Alpha Mining
 
@@ -272,6 +274,8 @@ Automating the factor-research loop itself: LLM- and RL-based systems that propo
 - [RD-Agent](https://github.com/microsoft/RD-Agent) - Microsoft's LLM-based autonomous R&D agent; its quantitative-finance mode (RD-Agent(Q)) iteratively proposes, codes, and backtests factors and models on top of Qlib.
 - [AlphaGen](https://github.com/ICT-FinD-Lab/alphagen) - Reinforcement learning framework for generating formulaic alpha factors, optimizing the performance of the factor set as a whole rather than individual factors.
 - [AlphaForge](https://github.com/DulyHao/AlphaForge) - Official code for a two-stage framework that mines formulaic factors with a generative-predictive network, then re-selects and re-weights them over time instead of fixing combination weights; evaluated on CSI 300/500 against GP, RL, and gradient-boosting baselines. AAAI 2025, [paper](https://arxiv.org/abs/2406.18394).
+- [QuantaAlpha](https://github.com/QuantaAlpha/QuantaAlpha) - LLM-driven factor mining that treats each mining run as a trajectory, revises weak steps, recombines high-reward segments across runs, and enforces hypothesis-expression-code consistency; author-reported results on CSI 300 with zero-shot transfer to CSI 500 and S&P 500. 2026 preprint, [paper](https://arxiv.org/abs/2602.07085); no license file.
+- [FactorMiner](https://github.com/minihellboy/factorminer) - Self-evolving factor-discovery agent that distills past runs into a memory of successful patterns and failure constraints, with a typed formula DSL, cost-aware evaluation, and lineage records for every candidate; research artifacts only, no trading. 2026 preprint, [paper](https://arxiv.org/abs/2602.14670); MIT.
 
 ### Financial LLM Evaluation Benchmarks
 
@@ -281,6 +285,9 @@ Standardized benchmarks for measuring what LLMs actually know and can do in fina
 - [FinBen](https://arxiv.org/abs/2402.12659) - Holistic financial benchmark spanning 36 datasets across 24 tasks including information extraction, risk forecasting, and decision-making.
 - [PIXIU](https://github.com/The-FinAI/PIXIU) - Open-source financial LLM toolkit with the FLARE evaluation benchmark, instruction-tuning data, and the FinMA model family.
 - [InvestorBench](https://aclanthology.org/2025.acl-long.126/) - Benchmark of LLM-based agents on financial decision-making tasks across stocks, crypto, and ETFs, comparing many backbone models under one agent design; ACL 2025, [code](https://github.com/felis33/INVESTOR-BENCH).
+- [FinMTM](https://github.com/HiThink-Research/FinMTM) - 11K+ bilingual questions over candlestick charts, plots, and report figures, covering multiple-choice, multi-turn dialogue (calculation, self-correction, long context), and tool-using agent tasks; 22 vision-language models evaluated. 2026 preprint, [paper](https://arxiv.org/abs/2602.03130).
+- [FinMRAGBench](https://github.com/sqyangit/FinMRAGBench) - Multimodal retrieval-augmented QA over multi-page, multi-document financial filings, with a reference retrieval-plus-Python agent; ACL 2026 Findings, [paper](https://aclanthology.org/2026.findings-acl.187/).
+- [CNFinBench](https://github.com/open-compass/CNFinBench) - Shanghai AI Lab benchmark of 29 subtasks testing financial expertise, end-to-end agent workflows, and compliance under multi-turn adversarial pressure; reports that models degrade sharply from single tasks to full execution chains. [Paper](https://arxiv.org/abs/2512.09506).
 
 ### Diffusion Models for Synthetic Financial Data
 
@@ -297,6 +304,7 @@ Quantitative approaches to decentralized finance: MEV extraction, AMM liquidity 
 - [Flashbots mev-boost](https://github.com/flashbots/mev-boost) - Reference implementation of proposer-builder separation (PBS) for Ethereum; core infrastructure for the MEV supply chain.
 - [Flashbots rbuilder](https://github.com/flashbots/rbuilder) - Open-source, high-performance Ethereum MEV-Boost block builder written in Rust; supports multiple building algorithms and backtesting.
 - [DefiLlama](https://defillama.com/) - Open-source DeFi analytics dashboard tracking TVL, yields, fees, and volumes across thousands of protocols; provides free API via [defillama-sdk](https://github.com/DefiLlama/defillama-sdk).
+- [Polymarket Data](https://github.com/SII-WANGZJ/Polymarket_data) - Shanghai Innovation Institute toolkit and dataset of 1.1B Polymarket trade records across 268K+ markets, fetched directly from Polygon and the Gamma API; historical data on [Hugging Face](https://huggingface.co/datasets/SII-WANGZJ/Polymarket_data), MIT.
 - [ultimate-defi-research-base](https://github.com/OffcierCia/ultimate-defi-research-base) - Curated collection of DeFi and blockchain research covering MEV, AMM design, yield optimization, and on-chain analytics.
 
 
@@ -324,6 +332,7 @@ List of software tools and platforms used in quantitative finance.
 | **[ml-quant-trading](https://github.com/initial-d/ml-quant-trading)** | A-share multi-factor research stack: 213-dim tensor factor engine, bias correction, ML baselines, Markowitz optimization | Early-stage research codebase accompanying an [arXiv paper](https://arxiv.org/abs/2507.07107); notably transparent about validation status and non-goals |
 | **[Planar.jl](https://github.com/BubbleParticles/Planar.jl)** | Julia trading bot framework with CCXT (100+ exchanges), Zarr OHLCV persistence, and unified sim/paper/live execution | Apache-2.0; same strategy code across backtest and live, margin/leverage, built-in grid/evolutionary/Bayesian optimization; early-stage with a small community |
 | **[SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub)** | Local-first, read-only trading journal and review harness that freezes agent or CLI runs into evidence packs with deterministic replay and delayed D1/D3 outcome scoring | MIT; no broker connection or order execution; ships a 240-case synthetic finance-agent benchmark (`finance-jev-v1`); early-stage |
+| **[AKQuant](https://github.com/akfamily/akquant)** | Rust-core backtesting engine with a Python API, built-in walk-forward training for PyTorch/scikit-learn models, and a Polars factor-expression engine for Alpha101-style formulas | MIT; from the AKShare team; documentation mostly in Chinese |
 | **[LumiBot](https://github.com/Lumiwealth/lumibot)** | Python backtesting and live-trading framework with a built-in LLM agent runtime and shared strategy lifecycle. | GPL-3.0; broker and data access depend on configuration; AI examples require a model API key. |
 
 #### 2. **Data Providers**
@@ -496,6 +505,8 @@ Seminal and recent research that advances the field of quantitative finance.
 - [FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory](https://arxiv.org/abs/2311.13743) by Yu et al. (2023) - Trading agent with human-inspired layered memory and character design for improved decision-making.
 - [FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement](https://arxiv.org/abs/2407.06567) by Yu et al. (2024) - Manager-analyst agent hierarchy with risk control and self-critique, evaluated on trading and portfolio tasks.
 - [AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search](https://arxiv.org/abs/2608.11250) by Ye et al. (2026) - Preprint on alpha discovery with an MCTS scheduler and an adversarial reviewer that can re-evaluate candidates and reject unsupported results; includes [open-source orchestration](https://github.com/AutoResearch-Factory/AgonAlpha), with user-supplied data and evaluator.
+
+- [SOTA: Stock Options Trading Agents Guided by Option-Implied Return Distributions](https://github.com/JenniceXie/sota-options-rl/blob/main/paper/SOTA.pdf) by Xie and Liu (2026) - An LLM policy picks one of nine option-strategy families (directional, volatility, skew, curvature) while deterministic tools choose contracts, size, and hedges; trained by supervised fine-tuning on frontier-model trajectories, then reinforcement learning on portfolio returns net of costs. Evaluated out of sample over six months (March-August 2025) on SPY and nine large-cap stocks; preprint, [code](https://github.com/JenniceXie/sota-options-rl) (MIT).
 
 ### Forecasting and Trading Systems
 
