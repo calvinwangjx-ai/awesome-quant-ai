@@ -131,6 +131,8 @@ A scientifically rational design for a quantitative trading system or strategy s
 - **Key resources**:
   * [Kenneth French Data Library](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html) - The canonical free source for factor return data (Fama-French factors, momentum, portfolios).
   * [... and the Cross-Section of Expected Returns](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2249314) by Harvey, Liu, and Zhu - The "factor zoo" critique: why most published factors fail multiple-testing scrutiny.
+  * [Open Source Asset Pricing](https://github.com/OpenSourceAP/CrossSection) by Chen and Zimmermann - Code and free data for 200+ replicated cross-sectional return predictors, with `openassetpricing` Python/R download packages; accompanies their Critical Finance Review (2022) paper. Rebuilding signals from source requires WRDS access.
+  * [JKP Global Factor Data](https://github.com/bkelly-lab/jkp-data) by Jensen, Kelly, and Pedersen - Code behind the global factor-return and firm-characteristic dataset from "Is There a Replication Crisis in Finance?" (Journal of Finance, 2023); pre-computed factor portfolios are free at [jkpfactors.com](https://jkpfactors.com), while rebuilding requires WRDS.
 
 ### 3. High-Frequency Trading (HFT)
 
@@ -141,6 +143,9 @@ A scientifically rational design for a quantitative trading system or strategy s
   * **Order Flow Prediction**: Anticipating and acting on order flow patterns.
 - **Key resources**:
   * [Hummingbot](https://github.com/hummingbot/hummingbot) - Open-source framework for running market-making and arbitrage bots on centralized and decentralized exchanges.
+  * [hftbacktest](https://github.com/nkaz001/hftbacktest) - Tick-by-tick backtester for HFT and market-making strategies that models feed and order latency and queue position from L2/L3 order-book data; Python (Numba) and Rust, MIT.
+  * [DeepLOB: Deep Convolutional Neural Networks for Limit Order Books](https://arxiv.org/abs/1808.03668) by Zhang, Zohren, and Roberts - CNN + LSTM architecture for mid-price movement prediction from raw order-book states (IEEE Transactions on Signal Processing, 2019); [code](https://github.com/zcakhaa/DeepLOB-Deep-Convolutional-Neural-Networks-for-Limit-Order-Books).
+  * [LOB-Based Deep Learning Models for Stock Price Trend Prediction: A Benchmark Study](https://arxiv.org/abs/2308.01915) by Prata et al. - Re-evaluates 15 deep LOB models with the open-source [LOBCAST](https://github.com/matteoprata/LOBCAST) framework and finds all degrade markedly on new data (Artificial Intelligence Review, 2024).
 
 ### 4. Trend Following
 
@@ -160,7 +165,9 @@ A scientifically rational design for a quantitative trading system or strategy s
   * **Options Pricing**: Using volatility models for options valuation.
   * **Volatility Arbitrage**: Exploiting differences between implied and realized volatility.
 - **Key resources**:
-  * [Deep Hedging](https://arxiv.org/abs/1802.03042) by Buehler, Gonon, Teichmann, and Wood - Reinforcement learning for hedging derivatives under transaction costs, beyond Black-Scholes assumptions.
+  * [Deep Hedging](https://arxiv.org/abs/1802.03042) by Buehler, Gonon, Teichmann, and Wood - Reinforcement learning for hedging derivatives under transaction costs, beyond Black-Scholes assumptions; Buehler maintains an illustrative [reference implementation](https://github.com/hansbuehler/deephedging) (TensorFlow, GPL-3.0).
+  * [PFHedge](https://github.com/pfnet-research/pfhedge) - Preferred Networks' PyTorch framework for Deep Hedging, with composable derivatives, stochastic processes, and risk measures; MIT, though development has been quiet since 2024.
+  * [arch](https://github.com/bashtage/arch) - Kevin Sheppard's reference Python library for ARCH/GARCH-family volatility models, plus bootstrap methods and unit-root tests; the standard baseline any ML volatility forecast should beat.
 
 ### 6. Risk Parity
 
@@ -200,6 +207,8 @@ A scientifically rational design for a quantitative trading system or strategy s
   * **Natural Language Processing (NLP)**: Analyzing text data for trading signals.
 - **Key resources**:
   * [machine-learning-for-trading](https://github.com/stefan-jansen/machine-learning-for-trading) - Stefan Jansen's companion code to his book: 150+ notebooks covering the full ML4T workflow from data to deployment.
+  * [TradeMaster](https://github.com/TradeMaster-NTU/TradeMaster) - NTU's open-source reinforcement-learning trading platform: market simulators for portfolio management, order execution, and HFT tasks, a model zoo of RL algorithms, and systematic evaluation tooling ([NeurIPS 2023 Datasets and Benchmarks](https://proceedings.neurips.cc/paper_files/paper/2023/hash/b8f6f7f2ba4137124ac976286eacb611-Abstract.html)).
+  * [alphalens-reloaded](https://github.com/stefan-jansen/alphalens-reloaded) - Maintained fork of Quantopian's Alphalens for factor tear sheets (IC, quantile returns, turnover); now in maintenance mode, with new development in [ML4T Diagnostic](https://github.com/ml4t/diagnostic).
 
 ### 10. Multi-Strategy Approach
 
@@ -238,6 +247,8 @@ Multi-agent systems using large language models in specialized roles (analyst, t
 - [FinGPT](https://github.com/AI4Finance-Foundation/FinGPT) - Open-source financial LLM framework with data-centric design and LoRA fine-tuning; supports sentiment analysis, robo-advising, and algorithmic trading.
 - [FinRL](https://github.com/AI4Finance-Foundation/FinRL) - Financial reinforcement learning framework supporting A2C, DDPG, PPO, TD3, SAC agents; FinRL-X adds modular infrastructure for the LLM/agentic AI era.
 - [Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) - HKUDS's natural-language multi-agent research framework: agent-swarm presets (investment committee, quant desk, risk committee), backtest engines for A-shares, US equities, crypto, futures, FX, and options, multi-source data fallback, and an MCP server; MIT.
+- [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) - Educational proof of concept in which LLM investor agents produce trading decisions for configurable funds, with paper trading on a hash-chained ledger and backtesting; places no real trades and needs a Financial Datasets API key plus an LLM provider key; MIT.
+- [TraderHarness](https://github.com/HephaestLab/TraderHarness) - Backtesting harness for LLM trading agents built against training-data leakage: strict point-in-time data, date and entity masking so a model cannot recognize the period or company, deterministic replay, and export of runs as training trajectories; A-share data, Apache-2.0, early-stage.
 - [oracle3](https://github.com/YichengYang-Ethan/oracle3-prediction-market-agent) - Prediction-market research tools with MCP market access, fee-aware checks across related event contracts, a local paper ledger, and a separate Python engine for paper/live execution; Apache-2.0.
 
 ### Transformer Time-Series Foundation Models
@@ -251,6 +262,10 @@ Pre-trained transformer models for temporal data that can forecast time series z
 - [PatchTST](https://github.com/yuqinie98/PatchTST) - Segments time series into subseries-level patches as transformer tokens, achieving quadratic reduction in attention cost while retaining local semantics.
 - [TimeGPT](https://github.com/Nixtla/nixtla) - Nixtla's forecasting foundation model trained on 100B+ data points; zero-shot forecasting and anomaly detection through a hosted API with open-source Python/R SDKs (model weights are not released).
 - [Kronos](https://github.com/shiyu-coder/Kronos) - Decoder-only foundation model pre-trained on OHLCV candlestick sequences from 45+ exchanges, with a tokenizer that quantizes K-lines into hierarchical discrete tokens; open mini/small/base weights (4M-102M params), MIT-licensed code. AAAI 2026, [paper](https://arxiv.org/abs/2508.02739).
+- [Time-MoE](https://github.com/Time-MoE/Time-MoE) - Decoder-only mixture-of-experts forecasting models scaled to 2.4B parameters, released with Time-300B, an open collection of 300B+ time points; ICLR 2025 Spotlight, [paper](https://arxiv.org/abs/2409.16040).
+- [MOMENT](https://github.com/moment-timeseries-foundation-model/moment) - CMU Auton Lab's open time-series foundation models for forecasting, classification, anomaly detection, and imputation from one backbone, with released pre-training code; ICML 2024, [paper](https://arxiv.org/abs/2402.03885).
+- [Sundial](https://github.com/thuml/Sundial) - Tsinghua THUML's generative foundation models trained on 10^12 time points with a TimeFlow loss (no discrete tokenization), producing sample paths for probabilistic zero-shot forecasts; ICML 2025 Oral, [paper](https://arxiv.org/abs/2502.00816).
+- [Timestral](https://github.com/mistralai/timestral) - Mistral AI's multivariate probabilistic forecasting models (5M-209M params) with past-only and known-future covariates, 21 quantiles per step, and context up to 32K steps; CPU-friendly inference. Released October 2026; leaderboard rankings are vendor-reported. Code Apache-2.0, weights under a modified MIT license.
 
 ### AI-Driven Alpha Mining
 
@@ -258,6 +273,9 @@ Automating the factor-research loop itself: LLM- and RL-based systems that propo
 
 - [RD-Agent](https://github.com/microsoft/RD-Agent) - Microsoft's LLM-based autonomous R&D agent; its quantitative-finance mode (RD-Agent(Q)) iteratively proposes, codes, and backtests factors and models on top of Qlib.
 - [AlphaGen](https://github.com/ICT-FinD-Lab/alphagen) - Reinforcement learning framework for generating formulaic alpha factors, optimizing the performance of the factor set as a whole rather than individual factors.
+- [AlphaForge](https://github.com/DulyHao/AlphaForge) - Official code for a two-stage framework that mines formulaic factors with a generative-predictive network, then re-selects and re-weights them over time instead of fixing combination weights; evaluated on CSI 300/500 against GP, RL, and gradient-boosting baselines. AAAI 2025, [paper](https://arxiv.org/abs/2406.18394).
+- [QuantaAlpha](https://github.com/QuantaAlpha/QuantaAlpha) - LLM-driven factor mining that treats each mining run as a trajectory, revises weak steps, recombines high-reward segments across runs, and enforces hypothesis-expression-code consistency; author-reported results on CSI 300 with zero-shot transfer to CSI 500 and S&P 500. 2026 preprint, [paper](https://arxiv.org/abs/2602.07085); no license file.
+- [FactorMiner](https://github.com/minihellboy/factorminer) - Self-evolving factor-discovery agent that distills past runs into a memory of successful patterns and failure constraints, with a typed formula DSL, cost-aware evaluation, and lineage records for every candidate; research artifacts only, no trading. 2026 preprint, [paper](https://arxiv.org/abs/2602.14670); MIT.
 
 ### Financial LLM Evaluation Benchmarks
 
@@ -266,6 +284,10 @@ Standardized benchmarks for measuring what LLMs actually know and can do in fina
 - [FinanceBench](https://arxiv.org/abs/2311.11944) - Open-book financial QA benchmark of 10,231 questions grounded in public filings; reveals high hallucination rates in frontier LLMs answering from 10-Ks.
 - [FinBen](https://arxiv.org/abs/2402.12659) - Holistic financial benchmark spanning 36 datasets across 24 tasks including information extraction, risk forecasting, and decision-making.
 - [PIXIU](https://github.com/The-FinAI/PIXIU) - Open-source financial LLM toolkit with the FLARE evaluation benchmark, instruction-tuning data, and the FinMA model family.
+- [InvestorBench](https://aclanthology.org/2025.acl-long.126/) - Benchmark of LLM-based agents on financial decision-making tasks across stocks, crypto, and ETFs, comparing many backbone models under one agent design; ACL 2025, [code](https://github.com/felis33/INVESTOR-BENCH).
+- [FinMTM](https://github.com/HiThink-Research/FinMTM) - 11K+ bilingual questions over candlestick charts, plots, and report figures, covering multiple-choice, multi-turn dialogue (calculation, self-correction, long context), and tool-using agent tasks; 22 vision-language models evaluated. 2026 preprint, [paper](https://arxiv.org/abs/2602.03130).
+- [FinMRAGBench](https://github.com/sqyangit/FinMRAGBench) - Multimodal retrieval-augmented QA over multi-page, multi-document financial filings, with a reference retrieval-plus-Python agent; ACL 2026 Findings, [paper](https://aclanthology.org/2026.findings-acl.187/).
+- [CNFinBench](https://github.com/open-compass/CNFinBench) - Shanghai AI Lab benchmark of 29 subtasks testing financial expertise, end-to-end agent workflows, and compliance under multi-turn adversarial pressure; reports that models degrade sharply from single tasks to full execution chains. [Paper](https://arxiv.org/abs/2512.09506).
 
 ### Diffusion Models for Synthetic Financial Data
 
@@ -282,6 +304,7 @@ Quantitative approaches to decentralized finance: MEV extraction, AMM liquidity 
 - [Flashbots mev-boost](https://github.com/flashbots/mev-boost) - Reference implementation of proposer-builder separation (PBS) for Ethereum; core infrastructure for the MEV supply chain.
 - [Flashbots rbuilder](https://github.com/flashbots/rbuilder) - Open-source, high-performance Ethereum MEV-Boost block builder written in Rust; supports multiple building algorithms and backtesting.
 - [DefiLlama](https://defillama.com/) - Open-source DeFi analytics dashboard tracking TVL, yields, fees, and volumes across thousands of protocols; provides free API via [defillama-sdk](https://github.com/DefiLlama/defillama-sdk).
+- [Polymarket Data](https://github.com/SII-WANGZJ/Polymarket_data) - Shanghai Innovation Institute toolkit and dataset of 1.1B Polymarket trade records across 268K+ markets, fetched directly from Polygon and the Gamma API; historical data on [Hugging Face](https://huggingface.co/datasets/SII-WANGZJ/Polymarket_data), MIT.
 - [ultimate-defi-research-base](https://github.com/OffcierCia/ultimate-defi-research-base) - Curated collection of DeFi and blockchain research covering MEV, AMM design, yield optimization, and on-chain analytics.
 
 
@@ -302,10 +325,14 @@ List of software tools and platforms used in quantitative finance.
 | **[pybroker](https://github.com/edtechre/pybroker)** | Backtesting framework designed for ML-driven strategies | Built-in walk-forward analysis and bootstrapped metrics |
 | **[Riskfolio-Lib](https://github.com/dcajasn/Riskfolio-Lib)** | Portfolio optimization: mean-risk, risk parity, hierarchical clustering methods | 20+ risk measures; strong documentation |
 | **[skfolio](https://github.com/skfolio/skfolio)** | Portfolio optimization with a scikit-learn-compatible API | Cross-validation and hyperparameter tuning for allocation models |
+| **[PyPortfolioOpt](https://github.com/PyPortfolio/PyPortfolioOpt)** | Mean-variance, Black-Litterman, and Hierarchical Risk Parity in a compact API | MIT; the most widely used entry point for Python portfolio optimization |
+| **[Cvxportfolio](https://github.com/cvxgrp/cvxportfolio)** | Multi-period convex portfolio optimization with transaction-cost and holding-cost models built into the backtest | GPL-3.0; from Boyd's Stanford group, implementing their [paper](https://stanford.edu/~boyd/papers/pdf/cvx_portfolio.pdf) |
+| **[deepdow](https://github.com/jankrepl/deepdow)** | End-to-end differentiable allocation networks: forecasting layers feed a convex-optimization layer, trained on losses like Sharpe or drawdown | Apache-2.0; research framework, maintenance quiet since early 2024 |
 | **[Ray/RLlib](https://github.com/ray-project/ray)** | Distributed reinforcement learning for adaptive strategies | Industry-standard RL infrastructure |
 | **[ml-quant-trading](https://github.com/initial-d/ml-quant-trading)** | A-share multi-factor research stack: 213-dim tensor factor engine, bias correction, ML baselines, Markowitz optimization | Early-stage research codebase accompanying an [arXiv paper](https://arxiv.org/abs/2507.07107); notably transparent about validation status and non-goals |
 | **[Planar.jl](https://github.com/BubbleParticles/Planar.jl)** | Julia trading bot framework with CCXT (100+ exchanges), Zarr OHLCV persistence, and unified sim/paper/live execution | Apache-2.0; same strategy code across backtest and live, margin/leverage, built-in grid/evolutionary/Bayesian optimization; early-stage with a small community |
 | **[SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub)** | Local-first, read-only trading journal and review harness that freezes agent or CLI runs into evidence packs with deterministic replay and delayed D1/D3 outcome scoring | MIT; no broker connection or order execution; ships a 240-case synthetic finance-agent benchmark (`finance-jev-v1`); early-stage |
+| **[AKQuant](https://github.com/akfamily/akquant)** | Rust-core backtesting engine with a Python API, built-in walk-forward training for PyTorch/scikit-learn models, and a Polars factor-expression engine for Alpha101-style formulas | MIT; from the AKShare team; documentation mostly in Chinese |
 | **[LumiBot](https://github.com/Lumiwealth/lumibot)** | Python backtesting and live-trading framework with a built-in LLM agent runtime and shared strategy lifecycle. | GPL-3.0; broker and data access depend on configuration; AI examples require a model API key. |
 
 #### 2. **Data Providers**
@@ -479,6 +506,8 @@ Seminal and recent research that advances the field of quantitative finance.
 - [FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement](https://arxiv.org/abs/2407.06567) by Yu et al. (2024) - Manager-analyst agent hierarchy with risk control and self-critique, evaluated on trading and portfolio tasks.
 - [AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search](https://arxiv.org/abs/2608.11250) by Ye et al. (2026) - Preprint on alpha discovery with an MCTS scheduler and an adversarial reviewer that can re-evaluate candidates and reject unsupported results; includes [open-source orchestration](https://github.com/AutoResearch-Factory/AgonAlpha), with user-supplied data and evaluator.
 
+- [SOTA: Stock Options Trading Agents Guided by Option-Implied Return Distributions](https://github.com/JenniceXie/sota-options-rl/blob/main/paper/SOTA.pdf) by Xie and Liu (2026) - An LLM policy picks one of nine option-strategy families (directional, volatility, skew, curvature) while deterministic tools choose contracts, size, and hedges; trained by supervised fine-tuning on frontier-model trajectories, then reinforcement learning on portfolio returns net of costs. Evaluated out of sample over six months (March-August 2025) on SPY and nine large-cap stocks; preprint, [code](https://github.com/JenniceXie/sota-options-rl) (MIT).
+
 ### Forecasting and Trading Systems
 
 - [CAST: A Cross-Asset State-Space Trading System for Drawdown Control in Stock Markets](https://arxiv.org/abs/2609.14205) by Peng et al. (2026) - Cross-asset collaborative Kalman filter feeding a model-predictive controller that uses forecast uncertainty as an explicit risk penalty; four 30-stock panels (NASDAQ, CSI300, TPX100, a global basket) over a 2010-2025 frictionless backtest. ICDM 2026, [code](https://github.com/FanBroWell/CAST) (Apache-2.0).
@@ -548,6 +577,8 @@ Communities, forums, and conferences dedicated to quantitative finance and AI in
 - [awesome-quant](https://github.com/wilsonfreitas/awesome-quant) - Curated list of libraries, packages, and resources for quants, organized by programming language.
 - [awesome-ai-in-finance](https://github.com/georgezouq/awesome-ai-in-finance) - Resources for AI applications in the financial industry.
 - [awesome-systematic-trading](https://github.com/paperswithbacktest/awesome-systematic-trading) - Curated list of systematic trading tools and strategies.
+- [financial-machine-learning](https://github.com/firmai/financial-machine-learning) - Large categorized list of practical financial ML repositories with activity indicators; updates have slowed since early 2025.
+- [awesome-trading-agents](https://github.com/LLMQuant/awesome-trading-agents) - Curated list of LLM trading agents, finance MCP servers, and agent skills, grouped by role (multi-agent systems, benchmarks, brokerage connectors).
 - [awesome-deep-learning](https://github.com/ChristosChristofidis/awesome-deep-learning) - Curated list of deep learning tutorials, projects, and communities.
 - [pytrade.org](https://github.com/PFund-Software-Ltd/pytrade.org) - Directory of Python packages and resources for algo-trading.
 - [46 Awesome Books for Quant Finance](https://www.pyquantnews.com/the-pyquant-newsletter/46-books-quant-finance-algo-trading-market-data) - Comprehensive book list from PyQuant Newsletter.
