@@ -157,6 +157,8 @@ A scientifically rational design for a quantitative trading system or strategy s
 - **Key resources**:
   * [Time Series Momentum](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2089463) by Moskowitz, Ooi, and Pedersen - The seminal evidence for trend persistence across 58 futures markets.
   * [pysystemtrade](https://github.com/pst-group/pysystemtrade) - Robert Carver's open-source systematic futures trading framework implementing his book's methodology.
+  * [TA-Lib](https://github.com/TA-Lib/ta-lib-python) - Python wrapper for the reference C library of 200+ technical indicators and candlestick-pattern detectors; the most common source of indicator features for ML and RL trading models (BSD).
+  * [ta](https://github.com/bukosabino/ta) - Pure pandas/NumPy technical-indicator library (momentum, volatility, trend, volume) with no C dependency, convenient for building feature sets; MIT.
 
 ### 5. Volatility Trading
 
@@ -207,6 +209,7 @@ A scientifically rational design for a quantitative trading system or strategy s
   * **Natural Language Processing (NLP)**: Analyzing text data for trading signals.
 - **Key resources**:
   * [machine-learning-for-trading](https://github.com/stefan-jansen/machine-learning-for-trading) - Stefan Jansen's companion code to his book: 150+ notebooks covering the full ML4T workflow from data to deployment.
+  * [FreqAI](https://www.freqtrade.io/en/stable/freqai/) - Freqtrade's machine-learning module: expands user-defined indicators into large feature sets, retrains models adaptively during backtests and live runs, and supports gradient boosting, PyTorch, and reinforcement-learning agents (stable-baselines3) with custom reward functions; GPL-3.0, [JOSS 2022](https://joss.theoj.org/papers/10.21105/joss.04864).
   * [TradeMaster](https://github.com/TradeMaster-NTU/TradeMaster) - NTU's open-source reinforcement-learning trading platform: market simulators for portfolio management, order execution, and HFT tasks, a model zoo of RL algorithms, and systematic evaluation tooling ([NeurIPS 2023 Datasets and Benchmarks](https://proceedings.neurips.cc/paper_files/paper/2023/hash/b8f6f7f2ba4137124ac976286eacb611-Abstract.html)).
   * [alphalens-reloaded](https://github.com/stefan-jansen/alphalens-reloaded) - Maintained fork of Quantopian's Alphalens for factor tear sheets (IC, quantile returns, turnover); now in maintenance mode, with new development in [ML4T Diagnostic](https://github.com/ml4t/diagnostic).
 
@@ -248,6 +251,7 @@ Multi-agent systems using large language models in specialized roles (analyst, t
 - [FinRL](https://github.com/AI4Finance-Foundation/FinRL) - Financial reinforcement learning framework supporting A2C, DDPG, PPO, TD3, SAC agents; FinRL-X adds modular infrastructure for the LLM/agentic AI era.
 - [Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) - HKUDS's natural-language multi-agent research framework: agent-swarm presets (investment committee, quant desk, risk committee), backtest engines for A-shares, US equities, crypto, futures, FX, and options, multi-source data fallback, and an MCP server; MIT.
 - [AI Hedge Fund](https://github.com/virattt/ai-hedge-fund) - Educational proof of concept in which LLM investor agents produce trading decisions for configurable funds, with paper trading on a hash-chained ledger and backtesting; places no real trades and needs a Financial Datasets API key plus an LLM provider key; MIT.
+- [QuantAgent](https://github.com/Y-Research-SBU/QuantAgent) - Multi-agent LLM framework that trades from price data alone: an indicator agent (RSI, MACD, stochastic, and others), a vision-based chart-pattern agent, a trend agent, and a risk agent, built on LangGraph; authors report zero-shot results over 4-hour horizons on ten instruments. Stony Brook University and collaborators, [paper](https://arxiv.org/abs/2509.09995) (the repository now titles the work "QuantHarness"); MIT.
 - [TraderHarness](https://github.com/HephaestLab/TraderHarness) - Backtesting harness for LLM trading agents built against training-data leakage: strict point-in-time data, date and entity masking so a model cannot recognize the period or company, deterministic replay, and export of runs as training trajectories; A-share data, Apache-2.0, early-stage.
 - [oracle3](https://github.com/YichengYang-Ethan/oracle3-prediction-market-agent) - Prediction-market research tools with MCP market access, fee-aware checks across related event contracts, a local paper ledger, and a separate Python engine for paper/live execution; Apache-2.0.
 
@@ -510,6 +514,7 @@ Seminal and recent research that advances the field of quantitative finance.
 - [FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement](https://arxiv.org/abs/2407.06567) by Yu et al. (2024) - Manager-analyst agent hierarchy with risk control and self-critique, evaluated on trading and portfolio tasks.
 - [AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search](https://arxiv.org/abs/2608.11250) by Ye et al. (2026) - Preprint on alpha discovery with an MCTS scheduler and an adversarial reviewer that can re-evaluate candidates and reject unsupported results; includes [open-source orchestration](https://github.com/AutoResearch-Factory/AgonAlpha), with user-supplied data and evaluator.
 
+- [Trading-R1: Financial Trading with LLM Reasoning via Reinforcement Learning](https://arxiv.org/abs/2509.11420) by Xiao et al. (2025) - Trains a reasoning LLM on ~100K samples combining technical, fundamental, news, sentiment, and macro inputs, using supervised fine-tuning, then RL with volatility-adjusted rewards on an easy-to-hard curriculum; the [repository](https://github.com/TauricResearch/Trading-R1) is a terminal client that requires a Tauric API key rather than released weights.
 - [SOTA: Stock Options Trading Agents Guided by Option-Implied Return Distributions](https://github.com/JenniceXie/sota-options-rl/blob/main/paper/SOTA.pdf) by Xie and Liu (2026) - An LLM policy picks one of nine option-strategy families (directional, volatility, skew, curvature) while deterministic tools choose contracts, size, and hedges; trained by supervised fine-tuning on frontier-model trajectories, then reinforcement learning on portfolio returns net of costs. Evaluated out of sample over six months (March-August 2025) on SPY and nine large-cap stocks; preprint, [code](https://github.com/JenniceXie/sota-options-rl) (MIT).
 
 ### Forecasting and Trading Systems
