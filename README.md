@@ -405,6 +405,10 @@ Online courses, tutorials, and workshops focused on quantitative investing and m
 - [Georgia Tech CS 7646: Machine Learning for Trading](https://omscs.gatech.edu/cs-7646-machine-learning-trading) - Graduate course covering ML-driven trading strategy construction, available through Georgia Tech's online MS program.
 - [WorldQuant University MSc in Financial Engineering](https://www.wqu.edu/) - Tuition-free, accredited online master's degree in financial engineering.
 - [Marcos López de Prado's Lectures](https://www.quantresearch.org/Lectures.htm) - Free lecture slides from his Cornell graduate courses on financial machine learning.
+- [LLMs-in-Finance](https://github.com/hananedupouy/LLMs-in-Finance) - Hands-on notebooks applying LLM tooling to financial workflows: multi-agent analysis with the OpenAI Agents SDK, AutoGen, and CrewAI (including a momentum-strategy example), RAG over earnings reports, and tests of multimodal models reading financial charts; MIT.
+- [AI Quant Trading: From Zero to One](https://github.com/waylandzhang/ai-quant-book) - Free bilingual (English/Chinese) book of 22 lessons on building trading systems as cooperating agents for signals, risk, and execution, with emphasis on data quality, look-ahead bias, overfitting, and costs; CC BY-NC-SA 4.0.
+- [Introduction to Quantitative Finance (量化研究入门资料)](https://github.com/Barca0412/Introduction-to-Quantitative-Finance) - Chinese-language knowledge base with a multi-factor research tutorial, curated AI-for-finance resources, and an automatically updated AI + Finance arXiv radar; MIT.
+- [Claude for Financial Services](https://github.com/anthropics/financial-services) - Anthropic's reference agents, skills, and data connectors for research and analyst workflows (market research, earnings review, DCF/LBO modeling); useful patterns for structuring finance agents, though aimed at drafting analyst work for human review rather than trading; Apache-2.0.
   
 
 ## Books
@@ -426,6 +430,8 @@ Significant books in quantitative finance, algorithmic trading, and market data 
 - [Technical Analysis from A to Z](https://amzn.to/3Sf8vZx) by Steven Achelis - A comprehensive guide to technical analysis indicators.
 - [Finding Alphas: A Quantitative Approach to Building Trading Strategies](https://www.amazon.com/Finding-Alphas-Quantitative-Approach-Strategies/dp/1119571219/) by Igor Tulchinsky - Discusses the process of finding trading strategies (alphas).
 - [Algorithmic and High-Frequency Trading](https://a.co/d/0fDaYzL) by Alvaro Cartea, Sebastian Jaimungal, and Jose Penalva - Provides an in-depth understanding of high-frequency trading strategies.
+- [Generative AI for Trading and Asset Management](https://www.wiley-vch.de/en/areas-interest/finance-economics-law/generative-ai-for-trading-and-asset-management-978-1-394-26697-5) by Hamlet Jesse Medina Ruiz and Ernest P. Chan (Wiley, 2025) - Generative models for markets, from autoregressive transformers, VAEs, flows, and GANs for time-series generation to efficient LLM fine-tuning and distillation; [notebooks](https://github.com/genai-for-traders/genai-for-trading-and-am).
+- [Hands-On AI Trading with Python, QuantConnect, and AWS](https://www.wiley-vch.de/en/areas-interest/finance-economics-law/hands-on-ai-trading-with-python-quantconnect-and-aws-978-1-394-26843-6) by Jiri Pik, Ernest P. Chan, Jared Broad, Philip Sun, and Vivek Singh (Wiley, 2025) - Runnable QuantConnect strategies applying ML and LLMs, including GPT-4 news summarization for sentiment, FinBERT signals, and Chronos forecasts for portfolio weights; [code](https://github.com/QuantConnect/HandsOnAITradingBook).
 - [Building Reliable Trading Systems](https://a.co/d/aICoI0O) by Keith Fitschen - Focuses on developing trading systems that perform well in real-world conditions.
 - [Professional Automated Trading: Theory and Practice](https://a.co/d/hZQvWw8) by Eugene A. Durenard - A practical guide to automated trading systems.
 - [Quantitative Investing: From Theory to Industry](https://a.co/d/cq0uukj) by Lingjie Ma - Bridges the gap between academic quantitative theory and industry practice.
@@ -512,6 +518,7 @@ Seminal and recent research that advances the field of quantitative finance.
 
 ### LLMs in Finance
 
+- [A Survey of Large Language Models in Finance (FinLLMs)](https://arxiv.org/abs/2402.02315) by Lee et al. (2024) - Traces financial language models from FinBERT to BloombergGPT, FinMA, and FinGPT, and catalogs benchmark tasks and datasets; companion [resource list](https://github.com/adlnlp/FinLLMs).
 - [FinBERT: Financial Sentiment Analysis with Pre-trained Language Models](https://arxiv.org/abs/1908.10063) by Dogu Araci - The first widely adopted finance-domain BERT model for sentiment analysis.
 - [BloombergGPT: A Large Language Model for Finance](https://arxiv.org/abs/2303.17564) by Wu et al. - 50B-parameter LLM trained on Bloomberg's proprietary financial corpus; the reference point for domain-specific financial LLMs.
 - [Can ChatGPT Forecast Stock Price Movements?](https://arxiv.org/abs/2304.07619) by Alejandro López-Lira and Yuehua Tang - Shows LLM sentiment scores on news headlines predict next-day returns; widely replicated and debated.
@@ -525,10 +532,12 @@ Seminal and recent research that advances the field of quantitative finance.
 
 ### AI Agents for Trading
 
+- [Large Language Model Agent in Financial Trading: A Survey](https://arxiv.org/abs/2408.06361) by Ding et al. (2024, revised 2026) - Organizes LLM trading research into "LLM as trader" and "LLM as alpha miner" architectures and highlights common evaluation gaps such as short test periods and closed models; a good starting map of the field.
 - [TradingAgents: Multi-Agents LLM Financial Trading Framework](https://arxiv.org/abs/2412.20138) by Xiao et al. (2024) - Multi-agent LLM framework simulating trading firm dynamics with specialized analyst and trader roles.
 - [FinAgent: A Multimodal Foundation Agent for Financial Trading](https://arxiv.org/abs/2402.18485) by Zhang et al. (2024) - Tool-augmented multimodal agent processing numerical, textual, and visual market data.
 - [FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory](https://arxiv.org/abs/2311.13743) by Yu et al. (2023) - Trading agent with human-inspired layered memory and character design for improved decision-making; [code](https://github.com/pipiku915/FinMem-LLM-StockTrading).
 - [FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement](https://arxiv.org/abs/2407.06567) by Yu et al. (2024) - Manager-analyst agent hierarchy with risk control and self-critique, evaluated on trading and portfolio tasks.
+- [CryptoTrade: A Reflective LLM-based Agent to Guide Zero-shot Cryptocurrency Trading](https://aclanthology.org/2024.emnlp-main.63.pdf) (EMNLP 2024) - Combines on-chain transaction statistics, news, and technical signals with a reflection step that reviews recent trading performance to steer later decisions; [code](https://github.com/Xtra-Computing/CryptoTrade).
 - [AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search](https://arxiv.org/abs/2608.11250) by Ye et al. (2026) - Preprint on alpha discovery with an MCTS scheduler and an adversarial reviewer that can re-evaluate candidates and reject unsupported results; includes [open-source orchestration](https://github.com/AutoResearch-Factory/AgonAlpha), with user-supplied data and evaluator.
 
 - [Trading-R1: Financial Trading with LLM Reasoning via Reinforcement Learning](https://arxiv.org/abs/2509.11420) by Xiao et al. (2025) - Trains a reasoning LLM on ~100K samples combining technical, fundamental, news, sentiment, and macro inputs, using supervised fine-tuning, then RL with volatility-adjusted rewards on an easy-to-hard curriculum; the [repository](https://github.com/TauricResearch/Trading-R1) is a terminal client that requires a Tauric API key rather than released weights.
@@ -611,6 +620,7 @@ Communities, forums, and conferences dedicated to quantitative finance and AI in
 - [awesome-ai-in-finance](https://github.com/georgezouq/awesome-ai-in-finance) - Resources for AI applications in the financial industry.
 - [awesome-systematic-trading](https://github.com/paperswithbacktest/awesome-systematic-trading) - Curated list of systematic trading tools and strategies.
 - [financial-machine-learning](https://github.com/firmai/financial-machine-learning) - Large categorized list of practical financial ML repositories with activity indicators; updates have slowed since early 2025.
+- [Awesome LLM Quantitative Trading Papers](https://github.com/Tom-roujiang/Awesome-LLM-Quantitative-Trading-Papers) - Paper list for LLMs in quant trading organized by trading agents, benchmarks, arenas, post-training, stock prediction, factor mining, forecasting, and surveys, with a stated curation policy.
 - [awesome-trading-agents](https://github.com/LLMQuant/awesome-trading-agents) - Curated list of LLM trading agents, finance MCP servers, and agent skills, grouped by role (multi-agent systems, benchmarks, brokerage connectors).
 - [awesome-deep-learning](https://github.com/ChristosChristofidis/awesome-deep-learning) - Curated list of deep learning tutorials, projects, and communities.
 - [pytrade.org](https://github.com/PFund-Software-Ltd/pytrade.org) - Directory of Python packages and resources for algo-trading.
