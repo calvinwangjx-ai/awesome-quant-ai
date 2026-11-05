@@ -404,6 +404,12 @@ List of software tools and platforms used in quantitative finance.
 #### 4. **Research Environments**
 - [Jupyter Notebook](https://jupyter.org/) - Interactive strategy prototyping and data exploration.
 - [Databricks](https://www.databricks.com/) - Big-data processing for alternative data streams and large-scale backtesting.
+- [STUMPY](https://github.com/stumpy-dev/stumpy) - Matrix-profile library for finding repeated motifs, discords (anomalies), and shape-similar segments in price series at scale, with GPU and Dask support; JOSS-published, NumFOCUS-affiliated.
+- [ruptures](https://github.com/deepcharles/ruptures) - Offline change-point detection (exact and approximate, parametric and non-parametric) for segmenting non-stationary series into regimes; BSD-2-Clause.
+- [hmmlearn](https://github.com/hmmlearn/hmmlearn) - Hidden Markov models with a scikit-learn-style API, the common starting point for market-regime models; BSD-3-Clause, in limited-maintenance mode.
+- [tslearn](https://github.com/tslearn-team/tslearn) - Time-series ML toolkit with DTW and soft-DTW distances, shapelets, and time-series k-means for clustering and classifying price-path shapes; BSD-2-Clause.
+- [tsfresh](https://github.com/blue-yonder/tsfresh) - Automatic extraction of hundreds of time-series features with built-in statistical relevance filtering, for turning raw price windows into model inputs; MIT.
+- [Time-Series-Library](https://github.com/thuml/Time-Series-Library) - Tsinghua THUML's benchmark codebase of deep time-series models (forecasting, imputation, anomaly detection, classification) for comparing architectures on one footing; MIT, maintainers no longer adding features as of 2026.
 
 
 ## Learning Resources
@@ -565,6 +571,9 @@ Seminal and recent research that advances the field of quantitative finance.
 
 ### Forecasting and Trading Systems
 
+- [Temporal Relational Ranking for Stock Prediction](https://arxiv.org/abs/1809.09441) by Feng et al. (2019) - Ranks stocks rather than regressing prices and adds industry and Wikipedia company relations through temporal graph convolution; an early, widely reused graph-based stock model with [code and data](https://github.com/fulifeng/Temporal_Relational_Stock_Ranking) (AGPL-3.0).
+- [DoubleAdapt: A Meta-learning Approach to Incremental Learning for Stock Trend Forecasting](https://arxiv.org/abs/2306.09862) by Zhao et al. (KDD 2023) - Adapts both data and model online to handle distribution shift in stock forecasting, built on Qlib; [code](https://github.com/SJTU-DMTai/DoubleAdapt).
+- [MASTER: Market-Guided Stock Transformer for Stock Price Forecasting](https://arxiv.org/abs/2312.15235) by Li et al. (AAAI 2024) - Models momentary and cross-time correlations between stocks and uses market-level information to select features; [code](https://github.com/SJTU-DMTai/MASTER) (MIT).
 - [CAST: A Cross-Asset State-Space Trading System for Drawdown Control in Stock Markets](https://arxiv.org/abs/2609.14205) by Peng et al. (2026) - Cross-asset collaborative Kalman filter feeding a model-predictive controller that uses forecast uncertainty as an explicit risk penalty; four 30-stock panels (NASDAQ, CSI300, TPX100, a global basket) over a 2010-2025 frictionless backtest. ICDM 2026, [code](https://github.com/FanBroWell/CAST) (Apache-2.0).
 
 
@@ -640,6 +649,7 @@ Communities, forums, and conferences dedicated to quantitative finance and AI in
 - [awesome-ai-in-finance](https://github.com/georgezouq/awesome-ai-in-finance) - Resources for AI applications in the financial industry.
 - [awesome-systematic-trading](https://github.com/paperswithbacktest/awesome-systematic-trading) - Curated list of systematic trading tools and strategies.
 - [financial-machine-learning](https://github.com/firmai/financial-machine-learning) - Large categorized list of practical financial ML repositories with activity indicators; updates have slowed since early 2025.
+- [stock-top-papers](https://github.com/marcuswang6/stock-top-papers) - Top-venue papers with code on stock price prediction, quantitative trading, and risk modeling (KDD, WWW, AAAI, IJCAI, and others), sorted by year.
 - [Awesome-TimeSeries-SpatioTemporal-LM-LLM](https://github.com/qingsongedu/Awesome-TimeSeries-SpatioTemporal-LM-LLM) - Paper list on LLMs and foundation models for time series and spatio-temporal data; updates stopped in late 2024.
 - [Transformers_And_LLM_Are_What_You_Dont_Need](https://github.com/valeman/Transformers_And_LLM_Are_What_You_Dont_Need) - Counterpoint collection of papers and benchmarks arguing that transformers and LLMs often underperform simpler models for time-series forecasting.
 - [Awesome LLM Quantitative Trading Papers](https://github.com/Tom-roujiang/Awesome-LLM-Quantitative-Trading-Papers) - Paper list for LLMs in quant trading organized by trading agents, benchmarks, arenas, post-training, stock prediction, factor mining, forecasting, and surveys, with a stated curation policy.
